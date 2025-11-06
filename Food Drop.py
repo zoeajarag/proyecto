@@ -33,25 +33,35 @@ jugador = Personaje(400,350)
 
 
 #todo lo referido a la comidita
+sandia = pygame.image.load("sandia.png")
+sandia = pygame.transform.scale(sandia, (sandia.get_width() * 1.5, sandia.get_height() * 1.5))
 x1 = randint(10, 790)
 y1 = 0
-comidita1 = Comida(x1, y1)
+comidita1 = Comida(x1, y1, sandia)
 
+frutilla = pygame.image.load("frutilla.png")
+frutilla = pygame.transform.scale(frutilla, (frutilla.get_width() * 1.5, frutilla.get_height() * 1.5))
 x2 = randint(10, 790)
 y2 = -100
-comidita2 = Comida(x2, y2)
+comidita2 = Comida(x2, y2, frutilla)
 
+naranja = pygame.image.load("naranja.png")
+naranja = pygame.transform.scale(naranja, (naranja.get_width() * 1.5, naranja.get_height() * 1.5))
 x3 = randint(10, 790)
 y3 = -200
-comidita3 = Comida(x3, y3)
+comidita3 = Comida(x3, y3, naranja)
 
+arandanos = pygame.image.load("arandanos.png")
+arandanos = pygame.transform.scale(arandanos, (arandanos.get_width() * 1.5, arandanos.get_height() * 1.5))
 x4 = randint(10, 790)
 y4 = -300
-comidita4 = Comida(x4, y4)
+comidita4 = Comida(x4, y4, arandanos)
 
+cerezas = pygame.image.load("cerecitas.png")
+cerezas = pygame.transform.scale(cerezas, (cerezas.get_width() * 1.5, cerezas.get_height() * 1.5))
 x5 = randint(10, 790)
 y5 = -400
-comidita5 = Comida(x5, y5)
+comidita5 = Comida(x5, y5, cerezas)
 
 #todo lo de chatarra
 xx1 = randint(10, 790)

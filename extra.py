@@ -9,7 +9,7 @@ class Extra(pygame.sprite.Sprite):
     
     def dibujar(self, interfaz):
         interfaz.blit(self.image, self.forma)
-        pygame.draw.rect(interfaz, colores.BLANCO, self.forma, 1)
+        # pygame.draw.rect(interfaz, colores.BLANCO, self.forma, 1)
 
     def movimientos(self, x, y):
         self.forma.x = x

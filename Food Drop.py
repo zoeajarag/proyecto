@@ -64,30 +64,39 @@ y5 = -400
 comidita5 = Comida(x5, y5, cerezas)
 
 #todo lo de chatarra
+hacha = pygame.image.load("hachas.png")
+hacha = pygame.transform.scale(hacha, (hacha.get_width() * 1.5, hacha.get_height() * 1.5))
 xx1 = randint(10, 790)
 yy1 = -50
-Chatarrita1 = Chatarra(xx1, yy1)
+Chatarrita1 = Chatarra(xx1, yy1, hacha)
 
+botas = pygame.image.load("botas.png")
+botas = pygame.transform.scale(botas, (botas.get_width() * 1.5, botas.get_height() * 1.5))
 xx2 = randint(10, 790)
 yy2 = -150
-Chatarrita2 = Chatarra(xx2, yy2)
+Chatarrita2 = Chatarra(xx2, yy2, botas)
 
+CD = pygame.image.load("CD.png")
+CD = pygame.transform.scale(CD, (CD.get_width() * 1.5, CD.get_height() * 1.5))
 xx3 = randint(10, 790)
 yy3 = -250
-Chatarrita3 = Chatarra(xx3, yy3)
+Chatarrita3 = Chatarra(xx3, yy3, CD)
 
+botella = pygame.image.load("botella.png")
+botella = pygame.transform.scale(botella, (botella.get_width() * 1.5, botella.get_height() * 1.5))
 xx4 = randint(10, 790)
 yy4 = -350
-Chatarrita4 = Chatarra(xx4, yy4)
+Chatarrita4 = Chatarra(xx4, yy4, botella)
 
+bomba = pygame.image.load("bomba.png")
+bomba = pygame.transform.scale(bomba, (bomba.get_width() * 1.5, bomba.get_height() * 1.5))
 xx5 = randint(10, 790)
 yy5 = -450
-Chatarrita5 = Chatarra(xx5, yy5)
+Chatarrita5 = Chatarra(xx5, yy5, bomba)
 
 #Vida extra
 imagen_extra1 = pygame.image.load("corazon1.png")
 imagen_extra1 = pygame.transform.scale(imagen_extra1, (imagen_extra1.get_width() * 1.5, imagen_extra1.get_height() * 1.5))
-
 extraX = randint(15, 785)
 extraY = -800
 vida_extra = Extra(extraX, extraY, imagen_extra1)

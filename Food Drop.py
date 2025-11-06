@@ -75,9 +75,12 @@ yy5 = -450
 Chatarrita5 = Chatarra(xx5, yy5)
 
 #Vida extra
+imagen_extra1 = pygame.image.load("corazon1.png")
+imagen_extra1 = pygame.transform.scale(imagen_extra1, (imagen_extra1.get_width() * 1.5, imagen_extra1.get_height() * 1.5))
+
 extraX = randint(15, 785)
 extraY = -800
-vida_extra = Extra(extraX, extraY)
+vida_extra = Extra(extraX, extraY, imagen_extra1)
 
 contador = 0
 

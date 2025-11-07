@@ -29,75 +29,78 @@ mover_izquierda = False
 mover_derecha = False
 
 #llamo al personaje y le digo donde quiero que esté
-jugador = Personaje(400,350)
+gatito = pygame.image.load("gatito1.png")
+gatito = pygame.transform.scale(gatito, (gatito.get_width() * 2.5, gatito.get_height() * 2.5))
+jugador = Personaje(400,350, gatito)
+reserva = pygame.image.load("gatito2.png")
 
 
 #todo lo referido a la comidita
 sandia = pygame.image.load("sandia.png")
 sandia = pygame.transform.scale(sandia, (sandia.get_width() * 1.5, sandia.get_height() * 1.5))
-x1 = randint(10, 790)
+x1 = randint(15, 785)
 y1 = 0
 comidita1 = Comida(x1, y1, sandia)
 
 frutilla = pygame.image.load("frutilla.png")
 frutilla = pygame.transform.scale(frutilla, (frutilla.get_width() * 1.5, frutilla.get_height() * 1.5))
-x2 = randint(10, 790)
+x2 = randint(15, 785)
 y2 = -100
 comidita2 = Comida(x2, y2, frutilla)
 
 naranja = pygame.image.load("naranja.png")
 naranja = pygame.transform.scale(naranja, (naranja.get_width() * 1.5, naranja.get_height() * 1.5))
-x3 = randint(10, 790)
+x3 = randint(15, 785)
 y3 = -200
 comidita3 = Comida(x3, y3, naranja)
 
 arandanos = pygame.image.load("arandanos.png")
 arandanos = pygame.transform.scale(arandanos, (arandanos.get_width() * 1.5, arandanos.get_height() * 1.5))
-x4 = randint(10, 790)
+x4 = randint(15, 785)
 y4 = -300
 comidita4 = Comida(x4, y4, arandanos)
 
 cerezas = pygame.image.load("cerecitas.png")
 cerezas = pygame.transform.scale(cerezas, (cerezas.get_width() * 1.5, cerezas.get_height() * 1.5))
-x5 = randint(10, 790)
+x5 = randint(15, 785)
 y5 = -400
 comidita5 = Comida(x5, y5, cerezas)
 
 #todo lo de chatarra
 hacha = pygame.image.load("hachas.png")
 hacha = pygame.transform.scale(hacha, (hacha.get_width() * 1.5, hacha.get_height() * 1.5))
-xx1 = randint(10, 790)
+xx1 = randint(15, 785)
 yy1 = -50
 Chatarrita1 = Chatarra(xx1, yy1, hacha)
 
 botas = pygame.image.load("botas.png")
 botas = pygame.transform.scale(botas, (botas.get_width() * 1.5, botas.get_height() * 1.5))
-xx2 = randint(10, 790)
+xx2 = randint(15, 785)
 yy2 = -150
 Chatarrita2 = Chatarra(xx2, yy2, botas)
 
 CD = pygame.image.load("CD.png")
 CD = pygame.transform.scale(CD, (CD.get_width() * 1.5, CD.get_height() * 1.5))
-xx3 = randint(10, 790)
+xx3 = randint(15, 785)
 yy3 = -250
 Chatarrita3 = Chatarra(xx3, yy3, CD)
 
 botella = pygame.image.load("botella.png")
 botella = pygame.transform.scale(botella, (botella.get_width() * 1.5, botella.get_height() * 1.5))
-xx4 = randint(10, 790)
+xx4 = randint(15, 785)
 yy4 = -350
 Chatarrita4 = Chatarra(xx4, yy4, botella)
 
 bomba = pygame.image.load("bomba.png")
 bomba = pygame.transform.scale(bomba, (bomba.get_width() * 1.5, bomba.get_height() * 1.5))
-xx5 = randint(10, 790)
+xx5 = randint(15, 785)
 yy5 = -450
 Chatarrita5 = Chatarra(xx5, yy5, bomba)
 
 #Vida extra
 imagen_extra1 = pygame.image.load("corazon1.png")
 imagen_extra1 = pygame.transform.scale(imagen_extra1, (imagen_extra1.get_width() * 1.5, imagen_extra1.get_height() * 1.5))
-extraX = randint(15, 785)
+extraX = randint(22, 778)
 extraY = -800
 vida_extra = Extra(extraX, extraY, imagen_extra1)
 
@@ -141,6 +144,16 @@ while run == True:
         jugador.update()
         jugador.dibujar(ventana)
 
+        if contador%100 == 0:
+            pestaneo = contador
+            gatito = reserva
+            reserva = pygame.image.load("gatito1.png")
+        if pestaneo + 10 == contador:
+            gatito = reserva
+            reserva = pygame.image.load("gatito2.png")
+
+
+
 
         #cosas de la comida
         comidita1.dibujar(ventana)
@@ -177,11 +190,11 @@ while run == True:
                 extraY += 20
             
             if extraY > 400:
-                extraX = randint(15, 785)
+                extraX = randint(22, 778)
                 extraY -= 1200
 
             if extraX in range(jugador.forma.left, jugador.forma.right) and extraY > jugador.forma.top:
-                extraX = randint(15, 785)
+                extraX = randint(22, 778)
                 extraY -= 1200
                 vida += 1
 
@@ -198,86 +211,86 @@ while run == True:
             yy5 += 18
 
         if y1 > 400:
-            x1 = randint(10, 790)
+            x1 = randint(15, 785)
             y1 -= 500
         if y2 > 400:
-            x2 = randint(10, 790)
+            x2 = randint(15, 785)
             y2 -= 550
         if y3 > 400:
-            x3 = randint(10, 790)
+            x3 = randint(15, 785)
             y3 -= 550
         if y4 > 400:
-            x4 = randint(10, 790)
+            x4 = randint(15, 785)
             y4 -= 550
         if y5 > 400:
-            x5 = randint(10, 790)
+            x5 = randint(15, 785)
             y5 -= 550
 
         if yy1 > 400:
-            xx1 = randint(10, 790)
+            xx1 = randint(15, 785)
             yy1 -= 500
         if yy2 > 400:
-            xx2 = randint(10, 790)
+            xx2 = randint(15, 785)
             yy2 -= 550
         if yy3 > 400:
-            xx3 = randint(10, 790)
+            xx3 = randint(15, 785)
             yy3 -= 550
         if yy4 > 400:
-            xx4 = randint(10, 790)
+            xx4 = randint(15, 785)
             yy4 -= 550
         if yy5 > 400:
-            xx5 = randint(10, 790)
+            xx5 = randint(15, 785)
             yy5 -= 550
 
 
         if x1 in range(jugador.forma.left, jugador.forma.right) and y1 > jugador.forma.top:
-            x1 = randint(10, 790)
+            x1 = randint(15, 785)
             y1 -= 500
             puntos += 10
 
         if x2 in range(jugador.forma.left, jugador.forma.right) and y2 > jugador.forma.top:
-            x2 = randint(10, 790)
+            x2 = randint(15, 785)
             y2 -= 550
             puntos += 10
 
         if x3 in range(jugador.forma.left, jugador.forma.right) and y3 > jugador.forma.top:
-            x3 = randint(10, 790)
+            x3 = randint(15, 785)
             y3 -= 550
             puntos += 10
 
         if x4 in range(jugador.forma.left, jugador.forma.right) and y4 > jugador.forma.top:
-            x4 = randint(10, 790)
+            x4 = randint(15, 785)
             y4 -= 550
             puntos += 10
 
         if x5 in range(jugador.forma.left, jugador.forma.right) and y5 > jugador.forma.top:
-            x5 = randint(10, 790)
+            x5 = randint(15, 785)
             y5 -= 550
             puntos += 10        
 
         
         if xx1 in range(jugador.forma.left, jugador.forma.right) and yy1 > jugador.forma.top:
-            xx1 = randint(10, 790)
+            xx1 = randint(15, 785)
             yy1 -= 500
             vida -= 1
 
         if xx2 in range(jugador.forma.left, jugador.forma.right) and yy2 > jugador.forma.top:
-            xx2 = randint(10, 790)
+            xx2 = randint(15, 785)
             yy2 -= 550
             vida -= 1
 
         if xx3 in range(jugador.forma.left, jugador.forma.right) and yy3 > jugador.forma.top:
-            xx3 = randint(10, 790)
+            xx3 = randint(15, 785)
             yy3 -= 550
             vida -= 1
 
         if xx4 in range(jugador.forma.left, jugador.forma.right) and yy4 > jugador.forma.top:
-            xx4 = randint(10, 790)
+            xx4 = randint(15, 785)
             yy4 -= 550
             vida -= 1
 
         if xx5 in range(jugador.forma.left, jugador.forma.right) and yy5 > jugador.forma.top:
-            xx5 = randint(10, 790)
+            xx5 = randint(15, 785)
             yy5 -= 550
             vida -= 1
 
@@ -301,7 +314,7 @@ while run == True:
         
     
     if vida < 1:
-        ventana.fill(colores.AZUL)
+        ventana.fill(colores.AZUL_OSCURO )
         ventana.blit(texto_final, (100, 100))
         ventana.blit(texto_perder, (250, 200))
 

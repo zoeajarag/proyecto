@@ -2,12 +2,14 @@ import pygame
 import colores
 
 class Personaje(pygame.sprite.Sprite):
-    def __init__(self, x, y):
-        self.forma = pygame.Rect(0, 0, 45, 45)
+    def __init__(self, x, y, imagen):
+        self.imagen = imagen
+        self.forma = pygame.Rect(0, 0, 40, 65)
         self.forma.center = (x, y)
 
     def dibujar(self, interfaz):
-        pygame.draw.rect(interfaz, colores.AMARILLO, self.forma)
+        interfaz.blit(self.imagen, self.forma)
+        # pygame.draw.rect(interfaz, colores.AMARILLO, self.forma, 1)
 
     def movimiento(self, delta_x, delta_y):
         self.forma.x += delta_x

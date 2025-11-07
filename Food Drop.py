@@ -30,9 +30,10 @@ mover_derecha = False
 
 #llamo al personaje y le digo donde quiero que esté
 gatito = pygame.image.load("gatito1.png")
-gatito = pygame.transform.scale(gatito, (gatito.get_width() * 2.5, gatito.get_height() * 2.5))
-jugador = Personaje(400,350, gatito)
+gatito = pygame.transform.scale(gatito, (gatito.get_width() * 3, gatito.get_height() * 3))
 reserva = pygame.image.load("gatito2.png")
+reserva = pygame.transform.scale(gatito, (gatito.get_width() * 3, gatito.get_height() * 3))
+jugador = Personaje(400,350, gatito)
 
 
 #todo lo referido a la comidita
@@ -104,6 +105,11 @@ extraX = randint(22, 778)
 extraY = -800
 vida_extra = Extra(extraX, extraY, imagen_extra1)
 
+#musiquita
+pygame.mixer.music.load("musiquita_juego2_2.wav")
+pygame.mixer.music.play(-1)
+pygame.mixer.music.set_volume(0.2)
+
 contador = 0
 
 #esto me permite controlar la velocidad de los eventos?
@@ -144,13 +150,15 @@ while run == True:
         jugador.update()
         jugador.dibujar(ventana)
 
-        if contador%100 == 0:
-            pestaneo = contador
-            gatito = reserva
-            reserva = pygame.image.load("gatito1.png")
-        if pestaneo + 10 == contador:
-            gatito = reserva
-            reserva = pygame.image.load("gatito2.png")
+        # if contador%100 == 0:
+        #     pestaneo = contador
+        #     jugador = Personaje(400,350, reserva)
+        #     # gatito = reserva
+        #     # reserva = pygame.image.load("gatito1.png")
+        # if pestaneo + 10 == contador:
+        #     jugador = Personaje(400, 350, gatito)
+        #     # gatito = reserva
+        #     # reserva = pygame.image.load("gatito2.png")
 
 
 
@@ -183,8 +191,8 @@ while run == True:
         Chatarrita5.movimientos(xx5, yy5)
 
         if vida < 3:
-            vida_extra.dibujar(ventana)
             vida_extra.movimientos(extraX, extraY)
+            vida_extra.dibujar(ventana)
 
             if contador%10 == 0:
                 extraY += 20

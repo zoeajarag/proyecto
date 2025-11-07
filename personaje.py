@@ -4,7 +4,7 @@ import colores
 class Personaje(pygame.sprite.Sprite):
     def __init__(self, x, y, imagen):
         self.imagen = imagen
-        self.forma = pygame.Rect(0, 0, 40, 65)
+        self.forma = pygame.Rect(0, 0, 48, 78)
         self.forma.center = (x, y)
 
     def dibujar(self, interfaz):

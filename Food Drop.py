@@ -16,10 +16,10 @@ puntos = 0
 N = "N"
 vida = 3
 
-fuente = pygame.font.SysFont("retro_gaming", 15)
-fuente_vida = pygame.font.SysFont("hearts_salad", 20)
-fuente_perder = pygame.font.SysFont("retro_gaming", 25)
-fuente_final = pygame.font.SysFont("retro_gaming", 50)
+fuente = pygame.font.Font("Retro Gaming.ttf", 15)
+fuente_vida = pygame.font.Font("Hearts Salad.otf", 20)
+fuente_perder = pygame.font.Font("Retro Gaming.ttf", 25)
+fuente_final = pygame.font.Font("Retro Gaming.ttf", 50)
 
 
 #defino los movimientos en falso
@@ -149,18 +149,6 @@ while run == True:
         jugador.movimiento(delta_x, delta_y)
         jugador.update()
         jugador.dibujar(ventana)
-
-        # if contador%100 == 0:
-        #     pestaneo = contador
-        #     jugador = Personaje(400,350, reserva)
-        #     # gatito = reserva
-        #     # reserva = pygame.image.load("gatito1.png")
-        # if pestaneo + 10 == contador:
-        #     jugador = Personaje(400, 350, gatito)
-        #     # gatito = reserva
-        #     # reserva = pygame.image.load("gatito2.png")
-
-
 
 
         #cosas de la comida

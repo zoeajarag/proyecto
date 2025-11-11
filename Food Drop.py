@@ -21,7 +21,6 @@ fuente_vida = pygame.font.Font("Hearts Salad.otf", 20)
 fuente_perder = pygame.font.Font("Retro Gaming.ttf", 25)
 fuente_final = pygame.font.Font("Retro Gaming.ttf", 50)
 
-
 #defino los movimientos en falso
 mover_arriba = False
 mover_abajo = False
